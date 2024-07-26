@@ -1,17 +1,21 @@
-import { Layouts } from '../@types/keyboard.type';
+import { QmkKeymap, Layouts } from '../@types/keyboard.type';
 
-type KeyboardLayoutResponse = {
+type QmkKeyboardResponse = {
   layouts: Layouts;
 };
 
-export async function fetchKeyboardLayout(url: string) {
+type QmkKeymapResponse = {
+  layers: QmkKeymap;
+};
+
+export async function fetchQmkKeyboard(url: string) {
   const res = await fetch(url);
-  const data: KeyboardLayoutResponse = await res.json();
-  return data.layouts;
+  const data: QmkKeyboardResponse = await res.json();
+  return data;
 }
 
-export async function fetchKeymaps(url: string) {
+export async function fetchQmkKeymap(url: string) {
   const res = await fetch(url);
-  const data = await res.json();
+  const data: QmkKeymapResponse = await res.json();
   return data;
 }

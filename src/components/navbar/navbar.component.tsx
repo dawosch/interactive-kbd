@@ -1,9 +1,17 @@
+import { Heading, Pane } from 'evergreen-ui';
+import { PropsWithChildren } from 'react';
 import './style.css';
 
-export function Navbar({ title }: { title: string }) {
+export function Navbar({ title, children }: PropsWithChildren<{ title: string }>) {
   return (
     <nav className="navbar">
-      <a href="/">{title}</a>
+      <Pane display="flex" padding={16} background="tint2" borderRadius={3}>
+        <Pane alignItems="center" display="flex">
+          <Heading size={600}>{title}</Heading>
+        </Pane>
+
+        {children}
+      </Pane>
     </nav>
   );
 }

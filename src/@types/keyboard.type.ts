@@ -1,8 +1,8 @@
-export type Key = { matrix: [number, number]; x: number; y: number };
+export type Key = { matrix: [number, number]; x: number; y: number; w?: number; h?: number };
 
-export type Layout = Key[];
+export type QmkLayout = Key[];
 
-export type Layouts = { [key: string]: { layout: Layout } };
+export type Layouts = { [key: string]: { layout: QmkLayout } };
 
 export type QmkKeyboard = { layouts: Layouts };
 

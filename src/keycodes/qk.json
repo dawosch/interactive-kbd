@@ -1,0 +1,774 @@
+[
+  {
+    "key": "QK_BOOTLOADER",
+    "legend": "",
+    "aliases": ["QK_BOOT"]
+  },
+  {
+    "key": "QK_DEBUG_TOGGLE",
+    "legend": "",
+    "aliases": ["DB_TOGG"]
+  },
+  {
+    "key": "QK_CLEAR_EEPROM",
+    "legend": "",
+    "aliases": ["EE_CLR"]
+  },
+  {
+    "key": "QK_MAKE",
+    "legend": ""
+  },
+  {
+    "key": "QK_REBOOT",
+    "legend": "",
+    "aliases": ["QK_RBT"]
+  },
+  {
+    "key": "QK_AUDIO_ON",
+    "legend": "",
+    "aliases": ["AU_ON"]
+  },
+  {
+    "key": "QK_AUDIO_OFF",
+    "legend": "",
+    "aliases": ["AU_OFF"]
+  },
+  {
+    "key": "QK_AUDIO_TOGGLE",
+    "legend": "",
+    "aliases": ["AU_TOGG"]
+  },
+  {
+    "key": "QK_AUDIO_CLICKY_TOGGLE",
+    "legend": "",
+    "aliases": ["CK_TOGG"]
+  },
+  {
+    "key": "QK_AUDIO_CLICKY_ON",
+    "legend": "",
+    "aliases": ["CK_ON"]
+  },
+  {
+    "key": "QK_AUDIO_CLICKY_OFF",
+    "legend": "",
+    "aliases": ["CK_OFF"]
+  },
+  {
+    "key": "QK_AUDIO_CLICKY_UP",
+    "legend": "",
+    "aliases": ["CK_UP"]
+  },
+  {
+    "key": "QK_AUDIO_CLICKY_DOWN",
+    "legend": "",
+    "aliases": ["CK_DOWN"]
+  },
+  {
+    "key": "QK_AUDIO_CLICKY_RESET",
+    "legend": "",
+    "aliases": ["CK_RST"]
+  },
+  {
+    "key": "QK_MUSIC_ON",
+    "legend": "",
+    "aliases": ["MU_ON"]
+  },
+  {
+    "key": "QK_MUSIC_OFF",
+    "legend": "",
+    "aliases": ["MU_OFF"]
+  },
+  {
+    "key": "QK_MUSIC_TOGGLE",
+    "legend": "",
+    "aliases": ["MU_TOGG"]
+  },
+  {
+    "key": "QK_MUSIC_MODE_NEXT",
+    "legend": "",
+    "aliases": ["MU_NEXT"]
+  },
+  {
+    "key": "QK_AUDIO_VOICE_NEXT",
+    "legend": "",
+    "aliases": ["AU_NEXT"]
+  },
+  {
+    "key": "QK_AUDIO_VOICE_PREVIOUS",
+    "legend": "",
+    "aliases": ["AU_PREV"]
+  },
+  {
+    "key": "QK_AUTO_SHIFT_DOWN",
+    "legend": "",
+    "aliases": ["AS_DOWN"]
+  },
+  {
+    "key": "QK_AUTO_SHIFT_UP",
+    "legend": "",
+    "aliases": ["AS_UP"]
+  },
+  {
+    "key": "QK_AUTO_SHIFT_REPORT",
+    "legend": "",
+    "aliases": ["AS_RPT"]
+  },
+  {
+    "key": "QK_AUTO_SHIFT_ON",
+    "legend": "",
+    "aliases": ["AS_ON"]
+  },
+  {
+    "key": "QK_AUTO_SHIFT_OFF",
+    "legend": "",
+    "aliases": ["AS_OFF"]
+  },
+  {
+    "key": "QK_AUTO_SHIFT_TOGGLE",
+    "legend": "",
+    "aliases": ["AS_TOGG"]
+  },
+  {
+    "key": "QK_AUTOCORRECT_ON",
+    "legend": "",
+    "aliases": ["AC_ON"]
+  },
+  {
+    "key": "QK_AUTOCORRECT_OFF",
+    "legend": "",
+    "aliases": ["AC_OFF"]
+  },
+  {
+    "key": "QK_AUTOCORRECT_TOGGLE",
+    "legend": "",
+    "aliases": ["AC_TOGG"]
+  },
+  {
+    "key": "QK_BACKLIGHT_TOGGLE",
+    "legend": "",
+    "aliases": ["BL_TOGG"]
+  },
+  {
+    "key": "QK_BACKLIGHT_STEP",
+    "legend": "",
+    "aliases": ["BL_STEP"]
+  },
+  {
+    "key": "QK_BACKLIGHT_ON",
+    "legend": "",
+    "aliases": ["BL_ON"]
+  },
+  {
+    "key": "QK_BACKLIGHT_OFF",
+    "legend": "",
+    "aliases": ["BL_OFF"]
+  },
+  {
+    "key": "QK_BACKLIGHT_UP",
+    "legend": "",
+    "aliases": ["BL_UP"]
+  },
+  {
+    "key": "QK_BACKLIGHT_DOWN",
+    "legend": "",
+    "aliases": ["BL_DOWN"]
+  },
+  {
+    "key": "QK_BACKLIGHT_TOGGLE_BREATHING",
+    "legend": "",
+    "aliases": ["BL_BRTG"]
+  },
+  {
+    "key": "QK_OUTPUT_AUTO",
+    "legend": "",
+    "aliases": ["OU_AUTO"]
+  },
+  {
+    "key": "QK_OUTPUT_USB",
+    "legend": "",
+    "aliases": ["OU_USB"]
+  },
+  {
+    "key": "QK_OUTPUT_BLUETOOTH",
+    "legend": "",
+    "aliases": ["OU_BT"]
+  },
+  {
+    "key": "QK_CAPS_WORD_TOGGLE",
+    "legend": "",
+    "aliases": ["CW_TOGG"]
+  },
+  {
+    "key": "QK_DYNAMIC_MACRO_RECORD_START_1",
+    "legend": "",
+    "aliases": ["DM_REC1"]
+  },
+  {
+    "key": "QK_DYNAMIC_MACRO_RECORD_START_2",
+    "legend": "",
+    "aliases": ["DM_REC2"]
+  },
+  {
+    "key": "QK_DYNAMIC_MACRO_PLAY_1",
+    "legend": "",
+    "aliases": ["DM_PLY1"]
+  },
+  {
+    "key": "QK_DYNAMIC_MACRO_PLAY_2",
+    "legend": "",
+    "aliases": ["DM_PLY2"]
+  },
+  {
+    "key": "QK_DYNAMIC_MACRO_RECORD_STOP",
+    "legend": "",
+    "aliases": ["DM_RSTP"]
+  },
+  {
+    "key": "QK_GRAVE_ESCAPE",
+    "legend": "",
+    "aliases": ["QK_GESC"]
+  },
+  {
+    "key": "QK_LOCK",
+    "legend": ""
+  },
+  {
+    "key": "DF",
+    "legend": ""
+  },
+  {
+    "key": "MO",
+    "legend": ""
+  },
+  {
+    "key": "OSL",
+    "legend": ""
+  },
+  {
+    "key": "LM",
+    "legend": ""
+  },
+  {
+    "key": "TG",
+    "legend": ""
+  },
+  {
+    "key": "TO",
+    "legend": ""
+  },
+  {
+    "key": "TT",
+    "legend": ""
+  },
+  {
+    "key": "QK_LEAD",
+    "legend": ""
+  },
+  {
+    "key": "QK_LED_MATRIX_ON",
+    "legend": "",
+    "aliases": ["LM_ON"]
+  },
+  {
+    "key": "QK_LED_MATRIX_OFF",
+    "legend": "",
+    "aliases": ["LM_OFF"]
+  },
+  {
+    "key": "QK_LED_MATRIX_TOGGLE",
+    "legend": "",
+    "aliases": ["LM_TOGG"]
+  },
+  {
+    "key": "QK_LED_MATRIX_MODE_NEXT",
+    "legend": "",
+    "aliases": ["LM_NEXT"]
+  },
+  {
+    "key": "QK_LED_MATRIX_MODE_PREVIOUS",
+    "legend": "",
+    "aliases": ["LM_PREV"]
+  },
+  {
+    "key": "QK_LED_MATRIX_BRIGHTNESS_UP",
+    "legend": "",
+    "aliases": ["LM_BRIU"]
+  },
+  {
+    "key": "QK_LED_MATRIX_BRIGHTNESS_DOWN",
+    "legend": "",
+    "aliases": ["LM_BRID"]
+  },
+  {
+    "key": "QK_LED_MATRIX_SPEED_UP",
+    "legend": "",
+    "aliases": ["LM_SPDU"]
+  },
+  {
+    "key": "QK_LED_MATRIX_SPEED_DOWN",
+    "legend": "",
+    "aliases": ["LM_SPDD"]
+  },
+  {
+    "key": "KC_MS_UP",
+    "legend": "",
+    "aliases": ["KC_MS_U"]
+  },
+  {
+    "key": "KC_MS_DOWN",
+    "legend": "",
+    "aliases": ["KC_MS_D"]
+  },
+  {
+    "key": "KC_MS_LEFT",
+    "legend": "",
+    "aliases": ["KC_MS_L"]
+  },
+  {
+    "key": "KC_MS_RIGHT",
+    "legend": "",
+    "aliases": ["KC_MS_R"]
+  },
+  {
+    "key": "KC_MS_BTN1",
+    "legend": "",
+    "aliases": ["KC_BTN1"]
+  },
+  {
+    "key": "C_MS_BTN2",
+    "legend": "",
+    "aliases": ["KC_BTN2"]
+  },
+  {
+    "key": "C_MS_BTN3",
+    "legend": "",
+    "aliases": ["KC_BTN3"]
+  },
+  {
+    "key": "C_MS_BTN4",
+    "legend": "",
+    "aliases": ["KC_BTN4"]
+  },
+  {
+    "key": "C_MS_BTN5",
+    "legend": "",
+    "aliases": ["KC_BTN5"]
+  },
+  {
+    "key": "KC_MS_WH_UP",
+    "legend": "",
+    "aliases": ["KC_WH_U"]
+  },
+  {
+    "key": "KC_MS_WH_DOWN",
+    "legend": "",
+    "aliases": ["KC_WH_D"]
+  },
+  {
+    "key": "KC_MS_WH_LEFT",
+    "legend": "",
+    "aliases": ["KC_WH_L"]
+  },
+  {
+    "key": "KC_MS_WH_RIGHT",
+    "legend": "",
+    "aliases": ["KC_WH_R"]
+  },
+  {
+    "key": "KC_MS_ACCEL0",
+    "legend": "",
+    "aliases": ["KC_ACL0"]
+  },
+  {
+    "key": "KC_MS_ACCEL1",
+    "legend": "",
+    "aliases": ["KC_ACL1"]
+  },
+  {
+    "key": "KC_MS_ACCEL2",
+    "legend": "",
+    "aliases": ["KC_ACL2"]
+  },
+  {
+    "key": "LCTL",
+    "legend": "",
+    "aliases": ["C"]
+  },
+  {
+    "key": "LSFT",
+    "legend": "",
+    "aliases": ["S"]
+  },
+  {
+    "key": "LALT",
+    "legend": "",
+    "aliases": ["A", "LOPT"]
+  },
+  {
+    "key": "LGUI",
+    "legend": "",
+    "aliases": ["G", "LCMD", "LWIN"]
+  },
+  {
+    "key": "RCTL",
+    "legend": ""
+  },
+  {
+    "key": "RSFT",
+    "legend": ""
+  },
+  {
+    "key": "RALT",
+    "legend": "",
+    "aliases": ["ROPT", "ALGR"]
+  },
+  {
+    "key": "RGUI",
+    "legend": "",
+    "aliases": ["RCMD", "RWIN"]
+  },
+  {
+    "key": "LSG",
+    "legend": "",
+    "aliases": ["SGUI", "SCMD", "SWIN"]
+  },
+  {
+    "key": "LAG",
+    "legend": ""
+  },
+  {
+    "key": "RSG",
+    "legend": ""
+  },
+  {
+    "key": "RAG",
+    "legend": ""
+  },
+  {
+    "key": "LCA",
+    "legend": ""
+  },
+  {
+    "key": "LSA",
+    "legend": ""
+  },
+  {
+    "key": "RSA",
+    "legend": ""
+  },
+  {
+    "key": "RCS",
+    "legend": ""
+  },
+  {
+    "key": "LCAG",
+    "legend": ""
+  },
+  {
+    "key": "MEH",
+    "legend": ""
+  },
+  {
+    "key": "HYPR",
+    "legend": ""
+  },
+  {
+    "key": "KC_MEH",
+    "legend": ""
+  },
+  {
+    "key": "KC_HYPR",
+    "legend": ""
+  },
+  {
+    "key": "MT",
+    "legend": ""
+  },
+  {
+    "key": "LCTL_T",
+    "legend": "",
+    "aliases": ["CTL_T"]
+  },
+  {
+    "key": "LSFT_T",
+    "legend": "",
+    "aliases": ["SFT_T"]
+  },
+  {
+    "key": "LALT_T",
+    "legend": "",
+    "aliases": ["LOPT_T", "ALT_T", "OPT_T"]
+  },
+  {
+    "key": "LGUI_T",
+    "legend": "",
+    "aliases": ["LCMD_T", "LWIN_T", "GUI_T", "CMD_T", "WIN_T"]
+  },
+  {
+    "key": "RCTL_T",
+    "legend": ""
+  },
+  {
+    "key": "RSFT_T",
+    "legend": ""
+  },
+  {
+    "key": "RALT_T",
+    "legend": "",
+    "aliases": ["ROPT_T", "ALGR_T"]
+  },
+  {
+    "key": "RGUI_T",
+    "legend": "",
+    "aliases": ["RCMD_T", "RWIN_T"]
+  },
+  {
+    "key": "LSG_T",
+    "legend": "",
+    "aliases": ["SGUI_T", "SCMD_T", "SWIN_T"]
+  },
+  {
+    "key": "LAG_T",
+    "legend": ""
+  },
+  {
+    "key": "RSG_T",
+    "legend": ""
+  },
+  {
+    "key": "RAG_T",
+    "legend": ""
+  },
+  {
+    "key": "LCA_T",
+    "legend": ""
+  },
+  {
+    "key": "LSA_T",
+    "legend": ""
+  },
+  {
+    "key": "RSA_T",
+    "legend": ""
+  },
+  {
+    "key": "RCS_T",
+    "legend": ""
+  },
+  {
+    "key": "LCAG_T",
+    "legend": ""
+  },
+  {
+    "key": "C_S_T",
+    "legend": ""
+  },
+  {
+    "key": "MEH_T",
+    "legend": ""
+  },
+  {
+    "key": "HYPR_T",
+    "legend": "",
+    "aliases": ["ALL_T"]
+  },
+  {
+    "key": "QK_DYNAMIC_TAPPING_TERM_PRINT",
+    "legend": "",
+    "aliases": ["DT_PRNT"]
+  },
+  {
+    "key": "QK_DYNAMIC_TAPPING_TERM_UP",
+    "legend": "",
+    "aliases": ["DT_UP"]
+  },
+  {
+    "key": "QK_DYNAMIC_TAPPING_TERM_DOWN",
+    "legend": "",
+    "aliases": ["DT_DOWN"]
+  },
+  {
+    "key": "QK_UNDERGLOW_TOGGLE",
+    "legend": "",
+    "aliases": ["UG_TOGG"]
+  },
+  {
+    "key": "QK_UNDERGLOW_MODE_NEXT",
+    "legend": "",
+    "aliases": ["UG_NEXT"]
+  },
+  {
+    "key": "QK_UNDERGLOW_MODE_PREVIOUS",
+    "legend": "",
+    "aliases": ["UG_PREV"]
+  },
+  {
+    "key": "QK_UNDERGLOW_HUE_UP",
+    "legend": "",
+    "aliases": ["UG_HUEU"]
+  },
+  {
+    "key": "QK_UNDERGLOW_HUE_DOWN",
+    "legend": "",
+    "aliases": ["UG_HUED"]
+  },
+  {
+    "key": "QK_UNDERGLOW_SATURATION_UP",
+    "legend": "",
+    "aliases": ["UG_SATU"]
+  },
+  {
+    "key": "QK_UNDERGLOW_SATURATION_DOWN",
+    "legend": "",
+    "aliases": ["UG_SATD"]
+  },
+  {
+    "key": "QK_UNDERGLOW_VALUE_UP",
+    "legend": "",
+    "aliases": ["UG_VALU"]
+  },
+  {
+    "key": "QK_UNDERGLOW_VALUE_DOWN",
+    "legend": "",
+    "aliases": ["UG_VALD"]
+  },
+  {
+    "key": "QK_UNDERGLOW_SPEED_UP",
+    "legend": "",
+    "aliases": ["UG_SPDU"]
+  },
+  {
+    "key": "QK_UNDERGLOW_SPEED_DOWN",
+    "legend": "",
+    "aliases": ["UG_SPDD"]
+  },
+  {
+    "key": "RGB_MODE_PLAIN",
+    "legend": "",
+    "aliases": ["RGB_M_P "]
+  },
+  {
+    "key": "RGB_MODE_BREATHE",
+    "legend": "",
+    "aliases": ["RGB_M_B"]
+  },
+  {
+    "key": "RGB_MODE_RAINBOW",
+    "legend": "",
+    "aliases": ["RGB_M_R"]
+  },
+  {
+    "key": "RGB_MODE_SWIRL",
+    "legend": "",
+    "aliases": ["RGB_M_SW"]
+  },
+  {
+    "key": "RGB_MODE_SNAKE",
+    "legend": "",
+    "aliases": ["RGB_M_SN"]
+  },
+  {
+    "key": "RGB_MODE_KNIGHT",
+    "legend": "",
+    "aliases": ["RGB_M_K"]
+  },
+  {
+    "key": "RGB_MODE_XMAS",
+    "legend": "",
+    "aliases": ["RGB_M_X"]
+  },
+  {
+    "key": "RGB_MODE_GRADIENT",
+    "legend": "",
+    "aliases": ["RGB_M_G"]
+  },
+  {
+    "key": "RGB_MODE_RGBTEST",
+    "legend": "",
+    "aliases": ["RGB_M_T"]
+  },
+  {
+    "key": "RGB_MODE_TWINKLE",
+    "legend": "",
+    "aliases": ["RGB_M_TW"]
+  },
+  {
+    "key": "RGB_TOG",
+    "legend": ""
+  },
+  {
+    "key": "RGB_MODE_FORWARD",
+    "legend": "",
+    "aliases": ["RGB_MOD"]
+  },
+  {
+    "key": "RGB_MODE_REVERSE",
+    "legend": "",
+    "aliases": ["RGB_RMOD"]
+  },
+  {
+    "key": "RGB_HUI",
+    "legend": ""
+  },
+  {
+    "key": "RGB_HUD",
+    "legend": ""
+  },
+  {
+    "key": "RGB_SAI",
+    "legend": ""
+  },
+  {
+    "key": "RGB_SAD",
+    "legend": ""
+  },
+  {
+    "key": "RGB_VAI",
+    "legend": ""
+  },
+  {
+    "key": "RGB_VAD",
+    "legend": ""
+  },
+  {
+    "key": "RGB_SPI",
+    "legend": ""
+  },
+  {
+    "key": "RGB_SPD",
+    "legend": ""
+  },
+  {
+    "key": "OSM",
+    "legend": ""
+  },
+  {
+    "key": "OSL",
+    "legend": ""
+  },
+  {
+    "key": "QK_ONE_SHOT_TOGGLE",
+    "legend": "",
+    "aliases": ["OS_TOGG"]
+  },
+  {
+    "key": "QK_ONE_SHOT_ON",
+    "legend": "",
+    "aliases": ["OS_ON"]
+  },
+  {
+    "key": "QK_ONE_SHOT_OFF",
+    "legend": "",
+    "aliases": ["OS_OFF"]
+  },
+  {
+    "key": "QK_REPEAT_KEY",
+    "legend": "",
+    "aliases": ["QK_REP"]
+  },
+  {
+    "key": "QK_ALT_REPEAT_KEY",
+    "legend": "",
+    "aliases": ["QK_AREP"]
+  }
+]

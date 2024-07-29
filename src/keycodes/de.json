@@ -1,0 +1,222 @@
+[
+  {
+    "key": "DE_CIRC",
+    "legend": "^",
+    "shift": "°"
+  },
+  {
+    "key": "DE_1",
+    "legend": "1",
+    "shift": "!"
+  },
+  {
+    "key": "DE_2",
+    "legend": "2",
+    "shift": "\""
+  },
+  {
+    "key": "DE_3",
+    "legend": "3",
+    "shift": "§"
+  },
+  {
+    "key": "DE_4",
+    "legend": "4",
+    "shift": "$"
+  },
+  {
+    "key": "DE_5",
+    "legend": "5",
+    "shift": "%"
+  },
+  {
+    "key": "DE_6",
+    "legend": "6",
+    "shift": "&"
+  },
+  {
+    "key": "DE_7",
+    "legend": "7",
+    "shift": "/"
+  },
+  {
+    "key": "DE_8",
+    "legend": "8",
+    "shift": "(",
+    "altgr": "["
+  },
+  {
+    "key": "DE_9",
+    "legend": "9",
+    "shift": ")",
+    "altgr": "]"
+  },
+  {
+    "key": "DE_0",
+    "legend": "0",
+    "shift": "=",
+    "altgr": "}"
+  },
+  {
+    "key": "DE_SS",
+    "legend": "ß",
+    "shift": "?",
+    "altgr": "\\"
+  },
+  {
+    "key": "DE_GRV",
+    "legend": "´",
+    "shift": "`",
+    "aliases": "DE_ACUT"
+  },
+  {
+    "key": "DE_A",
+    "legend": "A"
+  },
+  {
+    "key": "DE_B",
+    "legend": "B"
+  },
+  {
+    "key": "DE_C",
+    "legend": "C"
+  },
+  {
+    "key": "DE_D",
+    "legend": "D"
+  },
+  {
+    "key": "DE_E",
+    "legend": "E",
+    "altgr": "€"
+  },
+  {
+    "key": "DE_F",
+    "legend": "F"
+  },
+  {
+    "key": "DE_G",
+    "legend": "G"
+  },
+  {
+    "key": "DE_H",
+    "legend": "H"
+  },
+  {
+    "key": "DE_I",
+    "legend": "I"
+  },
+  {
+    "key": "DE_J",
+    "legend": "J"
+  },
+  {
+    "key": "DE_K",
+    "legend": "K"
+  },
+  {
+    "key": "DE_L",
+    "legend": "L"
+  },
+  {
+    "key": "DE_M",
+    "legend": "M"
+  },
+  {
+    "key": "DE_N",
+    "legend": "N"
+  },
+  {
+    "key": "DE_O",
+    "legend": "O"
+  },
+  {
+    "key": "DE_P",
+    "legend": "P"
+  },
+  {
+    "key": "DE_Q",
+    "legend": "Q",
+    "altgr": "@"
+  },
+  {
+    "key": "DE_R",
+    "legend": "R"
+  },
+  {
+    "key": "DE_S",
+    "legend": "S"
+  },
+  {
+    "key": "DE_T",
+    "legend": "T"
+  },
+  {
+    "key": "DE_U",
+    "legend": "U"
+  },
+  {
+    "key": "DE_V",
+    "legend": "V"
+  },
+  {
+    "key": "DE_W",
+    "legend": "W"
+  },
+  {
+    "key": "DE_X",
+    "legend": "X"
+  },
+  {
+    "key": "DE_Y",
+    "legend": "Y"
+  },
+  {
+    "key": "DE_Z",
+    "legend": "Z"
+  },
+  {
+    "key": "DE_PLUS",
+    "legend": "+",
+    "shift": "*",
+    "altgr": "~"
+  },
+  {
+    "key": "DE_MINS",
+    "legend": "-",
+    "shift": "_"
+  },
+  {
+    "key": "DE_HASH",
+    "legend": "#",
+    "shift": "'"
+  },
+  {
+    "key": "DE_DOT",
+    "legend": ".",
+    "shift": ":"
+  },
+  {
+    "key": "DE_COMM",
+    "legend": ",",
+    "shift": ";"
+  },
+  {
+    "key": "DE_LABK",
+    "legend": "<",
+    "shift": ">",
+    "altgr": "|"
+  },
+  {
+    "key": "DE_ADIA",
+    "legend": "Ä"
+  },
+  {
+    "key": "DE_ODIA",
+    "legend": "Ö"
+  },
+  {
+    "key": "DE_UDIA",
+    "legend": "Ü"
+  }
+]

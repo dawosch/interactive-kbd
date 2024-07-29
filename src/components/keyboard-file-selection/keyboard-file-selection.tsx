@@ -36,10 +36,10 @@ export function KeyboardFileSelection({
       fr.addEventListener('load', () => {
         switch (type) {
           case 'keyboard':
-            onKeyboardChange(fr.result ? JSON.parse(fr.result.toString()) : undefined);
+            onKeyboardChange(fr.result ? JSON.parse(fr.result.toString())['layers'] : undefined);
             break;
           case 'keymap':
-            onKeymapChange(fr.result ? JSON.parse(fr.result.toString()) : undefined);
+            onKeymapChange(fr.result ? JSON.parse(fr.result.toString())['layers'] : undefined);
             break;
         }
       });

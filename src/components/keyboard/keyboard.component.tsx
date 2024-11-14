@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { QmkKey, QmkKeymap } from '../../@types/keyboard.type';
 
 import { Key } from './key.components';
@@ -46,7 +46,8 @@ import { calculateParentSize, matrixToId } from './keyboard.utils';
 type KeyboardProps = { keys: QmkKey[]; keymap?: QmkKeymap; keyWidth: number; keyHeight: number; space: number };
 
 export function Keyboard({ keys, keymap, keyWidth, keyHeight, space }: KeyboardProps) {
-  const [layer, setLayer] = useState<number>(0);
+  const baseLayer = 0; // TODO: The "onPressed" function should return a layer AND if it's changing "baseLayer"
+  const [layer, setLayer] = useState<number>(baseLayer);
   const [width, height] = useMemo(() => calculateParentSize(keys ?? [], keyWidth, keyHeight, space), [keys, keyHeight, keyWidth, space]);
 
   return (
@@ -62,7 +63,7 @@ export function Keyboard({ keys, keymap, keyWidth, keyHeight, space }: KeyboardP
           width={keyWidth * (key.w ?? 1)}
           height={keyHeight * (key.h ?? 1)}
           pressed={key.pressed}
-          // onPressed={() => console.log('Pressed', key.keycode)}
+          onPressed={setLayer}
           // onReleased={() => console.log('Released', key.keycode)}
         />
       ))}

@@ -18,15 +18,6 @@ export function App() {
     return () => device?.removeEventListener('inputreport', handleDeviceInput);
   });
 
-  // const addKeyboardLegends = (keymap: QmkKeymap) => {
-  //   if (keyboard && selectedLayout && keymap) {
-  //     const extendedLayout: QmkKey[] = keyboard.layouts[selectedLayout].layout.map((key, index) => ({ ...key, keycode: keymap[layer][index] }));
-  //     console.log(extendedLayout);
-  //     setKeyboard({ ...keyboard, layouts: { [selectedLayout]: { layout: extendedLayout } } });
-  //   }
-  //   setKeymap(keymap);
-  // };
-
   const handleDeviceInput = ({ data }: HIDInputReportEvent) => {
     if (!selectedLayout) return;
 

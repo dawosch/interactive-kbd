@@ -1,53 +1,73 @@
 import { Pane } from 'evergreen-ui';
 import { useEffect, useState } from 'react';
-import { QmkKeyboard, QmkKeymap } from '../@types/keyboard.type';
+import { HidKey, QmkKeyboard, QmkKeymap } from '../@types/keyboard.type';
 import { Authorize } from '../components/authorize/authorize.component';
 import { KeyboardFileSelection } from '../components/keyboard-file-selection/keyboard-file-selection';
 import { Keyboard } from '../components/keyboard/keyboard.component';
+import { matrixToId } from '../components/keyboard/keyboard.utils';
 import { Navbar } from '../components/navbar/navbar.component';
 
-function App() {
+export function App() {
   const [keyboard, setKeyboard] = useState<QmkKeyboard>();
-  const [layout, setLayout] = useState<string>('');
+  const [selectedLayout, setSelectedLayout] = useState<string>();
   const [keymap, setKeymap] = useState<QmkKeymap>();
   const [device, setDevice] = useState<HIDDevice>();
-  const [pressedKeys, setPressedKeys] = useState<string[]>([]);
 
   useEffect(() => {
-    if (device && !device?.opened) {
-      device?.open();
-      device?.addEventListener('inputreport', (ev) => {
-        const keyIdentifier = `${ev.data.getInt8(2)}${ev.data.getInt8(1)}`;
-        console.log(ev.data);
-        if (ev.data.getInt8(3) === 1) {
-          setPressedKeys((pressedKeys) => [...pressedKeys, keyIdentifier]);
-          console.log('Pressed', keyIdentifier);
-        } else {
-          setPressedKeys((pressedKeys) => pressedKeys.filter((key) => key !== keyIdentifier));
-          console.log('Released', keyIdentifier);
+    device?.addEventListener('inputreport', handleDeviceInput);
+    return () => device?.removeEventListener('inputreport', handleDeviceInput);
+  });
+
+  // const addKeyboardLegends = (keymap: QmkKeymap) => {
+  //   if (keyboard && selectedLayout && keymap) {
+  //     const extendedLayout: QmkKey[] = keyboard.layouts[selectedLayout].layout.map((key, index) => ({ ...key, keycode: keymap[layer][index] }));
+  //     console.log(extendedLayout);
+  //     setKeyboard({ ...keyboard, layouts: { [selectedLayout]: { layout: extendedLayout } } });
+  //   }
+  //   setKeymap(keymap);
+  // };
+
+  const handleDeviceInput = ({ data }: HIDInputReportEvent) => {
+    if (!selectedLayout) return;
+
+    const keys = keyboard?.layouts[selectedLayout]?.layout;
+    const key: HidKey = { row: data.getUint8(0), col: data.getUint8(1), pressed: Boolean(data.getUint8(2)) };
+    switch (key.pressed) {
+      case true: {
+        if (keys) {
+          const mappedKeys = keys.map((_key) => (matrixToId(_key.matrix) === matrixToId([key.col, key.row]) ? { ..._key, pressed: true } : _key));
+          setKeyboard({ ...keyboard, layouts: { [selectedLayout]: { layout: mappedKeys } } });
         }
-      });
+        break;
+      }
+      case false: {
+        if (keys) {
+          const mappedKeys = keys.map((_key) => (matrixToId(_key.matrix) === matrixToId([key.col, key.row]) ? { ..._key, pressed: false } : _key));
+          setKeyboard({ ...keyboard, layouts: { [selectedLayout]: { layout: mappedKeys } } });
+        }
+        break;
+      }
     }
-  }, [device, pressedKeys]);
+  };
 
   return (
     <div className="interactive-kbd">
       <Navbar title="InteractiveKBD">
         <KeyboardFileSelection
-          layout={layout}
+          layout={selectedLayout}
           layouts={Object.keys(keyboard?.layouts ?? [])}
           onKeyboardChange={setKeyboard}
-          onLayoutChange={setLayout}
+          onLayoutChange={setSelectedLayout}
           onKeymapChange={setKeymap}
         />
         <Authorize onAuthorized={setDevice} />
       </Navbar>
 
-      <Pane display="flex" justifyContent="center" paddingTop="50px">
-        <Keyboard layout={keyboard?.layouts?.[layout]?.layout} keymap={keymap} keyWidth={50} keyHeight={50} space={10} pressedKeys={pressedKeys} />
-      </Pane>
+      {keyboard && selectedLayout && keyboard.layouts[selectedLayout]?.layout && (
+        <Pane display="flex" justifyContent="center" paddingTop="50px">
+          <Keyboard keys={keyboard.layouts[selectedLayout].layout} keymap={keymap} keyWidth={50} keyHeight={50} space={10} />
+        </Pane>
+      )}
     </div>
   );
 }
-
-export default App;

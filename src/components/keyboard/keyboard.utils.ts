@@ -1,6 +1,6 @@
-import { QmkLayout } from '../../@types/keyboard.type';
+import { QmkKey } from '../../@types/keyboard.type';
 
-export function calculateParentSize(layout: QmkLayout, keyWidth: number, keyHeight: number, space: number): [number, number] {
+export function calculateParentSize(layout: QmkKey[], keyWidth: number, keyHeight: number, space: number): [number, number] {
   return layout.reduce(
     (sizes, key) => {
       const x = keyWidth * key.x + space * Math.trunc(key.x) + keyWidth * (key.w ?? 1);
@@ -14,4 +14,8 @@ export function calculateParentSize(layout: QmkLayout, keyWidth: number, keyHeig
 
 export function getLayerFromKey(key?: string): number {
   return key ? parseInt(key.match(/\d/g)!.join(), 10) : 0;
+}
+
+export function matrixToId(matrix: [number, number]): string {
+  return `${matrix.join('')}`;
 }

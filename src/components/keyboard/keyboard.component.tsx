@@ -1,52 +1,69 @@
-import { QmkKeymap, QmkLayout } from '../../@types/keyboard.type';
+import { useMemo, useState } from 'react';
+import { QmkKey, QmkKeymap } from '../../@types/keyboard.type';
+
 import { Key } from './key.components';
-import kcKeys from '../../keycodes/kc.json';
-import deKeys from '../../keycodes/de.json';
-import { useEffect, useMemo } from 'react';
-import { key2icon } from '../../keycodes/key2icon';
-import { calculateParentSize, getLayerFromKey } from './keyboard.utils';
-import { isLayerChangeKey } from '../../qmk/key.utils';
+import { calculateParentSize, matrixToId } from './keyboard.utils';
 
-const KEYMAPPINGS = { KC: kcKeys, DE: deKeys };
+// import { key2icon, KEYMAPPINGS, PREFIXES } from '../../keycodes';
 
-function matrixToKey(matrix: [number, number]): string {
-  return `${matrix.join('')}`;
-}
+// const TAB_HOLD_PATTERN = /\w+\((\d+),\s?(\w+_\w+|\d)\)/;
+// const LAYER_SWITCH_PATTERN = /\w+\((\d+)\)/;
 
-function mapKeycode(keycode?: string): string {
-  const map = keycode?.substring(0, keycode.indexOf('_')) as typeof KEYMAPPINGS | undefined;
-  const legend: string | undefined = KEYMAPPINGS[map]?.find((mapKey) => mapKey.key === keycode || mapKey.aliases?.includes(keycode))?.legend;
-  if (legend) return legend;
-  return '';
-}
+// function getLegendFromKeycode(keycode: string) {
+//   const prefix = keycode.substring(0, keycode.indexOf('_'));
+//   const legend = KEYMAPPINGS[prefix as keyof typeof KEYMAPPINGS]?.find((map) => map.key === keycode || map.aliases?.includes(keycode))?.legend ?? '';
+//   return legend;
+// }
 
-type KeyboardProps = { layout?: QmkLayout; keymap?: QmkKeymap; keyWidth: number; keyHeight: number; space: number; pressedKeys?: string[] };
+// function parseKeycode(keycode: string) {
+//   const isDefaultKey = PREFIXES.some((p) => keycode.startsWith(`${p}_`));
 
-export function Keyboard({ layout, keymap, keyWidth, keyHeight, space, pressedKeys }: KeyboardProps) {
-  const [width, height] = useMemo(() => calculateParentSize(layout ?? [], keyWidth, keyHeight, space), [layout, keyHeight, keyWidth, space]);
-  const test = (key: string) => getLayerFromKey();
-  const activeLayerIndex = 0;
-  const activeLayer = () => keymap?.[activeLayerIndex];
+//   switch (isDefaultKey) {
+//     case true:
+//       return getLegendFromKeycode(keycode);
+//     case false: {
+//       const tabHoldMatch = keycode.match(TAB_HOLD_PATTERN);
+//       if (tabHoldMatch && tabHoldMatch.length === 3) {
+//         const layer = tabHoldMatch[1];
+//         const _keycode = tabHoldMatch[2];
+//         const legend = getLegendFromKeycode(_keycode);
+//         return `${legend} L${layer}`;
+//       }
 
-  // TODO: Get the name of the pressed key (matrix id) and then check if its a layer change key and then parse the number
+//       const switchLayerMatch = keycode.match(LAYER_SWITCH_PATTERN);
+//       if (switchLayerMatch && switchLayerMatch.length === 2) {
+//         const layer = keycode.match(LAYER_SWITCH_PATTERN)?.[1];
+//         return layer ? `L${layer}` : '';
+//       }
 
-  useEffect(() => {
-    console.log('LAYER', pressedKeys?.find(isLayerChangeKey));
-  }, [activeLayer, pressedKeys, activeLayerIndex]);
+//       return '';
+//     }
+//     default:
+//       return '';
+//   }
+// }
+
+type KeyboardProps = { keys: QmkKey[]; keymap?: QmkKeymap; keyWidth: number; keyHeight: number; space: number };
+
+export function Keyboard({ keys, keymap, keyWidth, keyHeight, space }: KeyboardProps) {
+  const [layer, setLayer] = useState<number>(0);
+  const [width, height] = useMemo(() => calculateParentSize(keys ?? [], keyWidth, keyHeight, space), [keys, keyHeight, keyWidth, space]);
 
   return (
     <div className="keyboard" style={{ width, height }}>
-      {layout?.map((key, i) => (
+      {keys?.map((key, i) => (
         <Key
-          key={matrixToKey(key.matrix)}
-          // legend={mapKeycode(keymap?.[0]?.[i])}
-          legend={mapKeycode(activeLayer?.[i])}
-          icon={key2icon[activeLayer?.[i]]}
+          key={matrixToId(key.matrix)}
+          keycode={keymap?.[layer][i]}
+          // legend={getLegend(layer, key.matrix, keymap)}
+          // icon={getIcon(layer, key.matrix, keymap)}
           positionX={keyWidth * key.x + space * Math.trunc(key.x)}
           positionY={keyHeight * key.y + space * Math.trunc(key.y)}
           width={keyWidth * (key.w ?? 1)}
           height={keyHeight * (key.h ?? 1)}
-          pressed={pressedKeys?.includes(matrixToKey(key.matrix)) ?? false}
+          pressed={key.pressed}
+          // onPressed={() => console.log('Pressed', key.keycode)}
+          // onReleased={() => console.log('Released', key.keycode)}
         />
       ))}
     </div>

@@ -1,10 +1,10 @@
-export type Key = { matrix: [number, number]; x: number; y: number; w?: number; h?: number };
+export type QmkKey = { pressed: boolean; matrix: [number, number]; x: number; y: number; w?: number; h?: number };
 
-export type QmkLayout = Key[];
+export type HidKey = { row: number; col: number; pressed: boolean };
 
-export type Layouts = { [key: string]: { layout: QmkLayout } };
+export type QmkLayouts = { [key: string]: { layout: QmkKey[] } };
 
-export type QmkKeyboard = { layouts: Layouts };
+export type QmkKeyboard = { layouts: QmkLayouts };
 
 export type QmkKeymapLayer = string[];
 

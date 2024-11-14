@@ -16,7 +16,7 @@ export function KeyboardFileSelection({
   onLayoutChange,
   onKeymapChange,
 }: {
-  layout: string;
+  layout?: string;
   layouts: string[];
   onKeyboardChange: KeyboardChangeEvent;
   onLayoutChange: LayoutChangeEvent;
@@ -35,9 +35,16 @@ export function KeyboardFileSelection({
       fr.readAsText(file, 'UTF-8');
       fr.addEventListener('load', () => {
         switch (type) {
-          case 'keyboard':
-            onKeyboardChange(fr.result ? JSON.parse(fr.result.toString())['layers'] : undefined);
+          case 'keyboard': {
+            const keyboard: QmkKeyboard | undefined = fr.result ? JSON.parse(fr.result.toString()) : undefined;
+            if (keyboard) {
+              console.log('keyboard', keyboard);
+              onKeyboardChange(keyboard);
+              onLayoutChange(Object.keys(keyboard?.layouts)?.[0]);
+            }
             break;
+          }
+
           case 'keymap':
             onKeymapChange(fr.result ? JSON.parse(fr.result.toString())['layers'] : undefined);
             break;
@@ -73,11 +80,17 @@ export function KeyboardFileSelection({
             <IconButton icon={UploadIcon} onClick={() => keyboardFileRef?.current?.click()} />
             <IconButton icon={CloudUploadIcon} onClick={() => setKeyboardModalOpen(true)} />
           </Group>
-          <input type="file" ref={keyboardFileRef} accept="application/json" style={{ display: 'none' }} onChange={(e) => handleLocalFile('keyboard', e.target.files?.[0])}></input>
+          <input
+            type="file"
+            ref={keyboardFileRef}
+            accept="application/json"
+            style={{ display: 'none' }}
+            onChange={(e) => handleLocalFile('keyboard', e.target.files?.[0])}
+          ></input>
         </Pane>
         <Pane display="flex" justifyContent="center" alignItems="center" paddingX="10px">
           <Text paddingRight="10px">Layout:</Text>
-          <Combobox items={layouts} selectedItem={layout} onChange={(layout) => onLayoutChange(layout)} disabled={!layout} />
+          <Combobox items={layouts} selectedItem={layout ?? ''} onChange={onLayoutChange} disabled={!layout} />
         </Pane>
         <Pane display="flex" justifyContent="center" alignItems="center" paddingX="10px">
           <Text paddingRight="10px">Keymaps:</Text>
@@ -85,7 +98,13 @@ export function KeyboardFileSelection({
             <IconButton icon={UploadIcon} onClick={() => keymapFileRef?.current?.click()} />
             <IconButton icon={CloudUploadIcon} onClick={() => setKeymapModalOpen(true)} />
           </Group>
-          <input type="file" ref={keymapFileRef} accept="application/json" style={{ display: 'none' }} onChange={(e) => handleLocalFile('keymap', e.target.files?.[0])}></input>
+          <input
+            type="file"
+            ref={keymapFileRef}
+            accept="application/json"
+            style={{ display: 'none' }}
+            onChange={(e) => handleLocalFile('keymap', e.target.files?.[0])}
+          ></input>
         </Pane>
       </Pane>
       <Dialog

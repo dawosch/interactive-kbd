@@ -1,0 +1,13 @@
+{
+  "KC_BSPC": "KeyBackspaceIcon",
+  "KC_ESC": "KeyEscapeIcon",
+  "KC_LSFT": "KeyShiftIcon",
+  "KC_LGUI": "GridViewIcon",
+  "KC_MUTE": "VolumeOffIcon",
+  "KC_TAB": "KeyTabIcon",
+  "KC_ENT": "KeyEnterIcon",
+  "KC_LEFT": "ArrowLeftIcon",
+  "KC_RIGHT": "ArrowRightIcon",
+  "KC_UP": "ArrowUpIcon",
+  "KC_DOWN": "ArrowDownIcon"
+}

@@ -249,6 +249,22 @@
       "key": "DE_UDIA",
       "legend": "ü",
       "shift": "Ü"
+    },
+    {
+      "key": "DE_QUOT",
+      "legend": "'"
+    },
+    {
+      "key": "DE_DQUO",
+      "legend": "\""
+    },
+    {
+      "key": "DE_EQL",
+      "legend": "="
+    },
+    {
+      "key": "DE_EXLM",
+      "legend": "!"
     }
   ]
 }

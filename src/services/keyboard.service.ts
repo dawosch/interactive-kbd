@@ -1,7 +1,7 @@
-import { QmkKeymap, Layouts } from '../@types/keyboard.type';
+import { QmkLayouts, QmkKeymap } from '../@types/keyboard.type';
 
 type QmkKeyboardResponse = {
-  layouts: Layouts;
+  layouts: QmkLayouts;
 };
 
 type QmkKeymapResponse = {

@@ -294,51 +294,51 @@
     },
     {
       "key": "KC_F1",
-      "legend": ""
+      "legend": "F1"
     },
     {
       "key": "KC_F2",
-      "legend": ""
+      "legend": "F2"
     },
     {
       "key": "KC_F3",
-      "legend": ""
+      "legend": "F3"
     },
     {
       "key": "KC_F4",
-      "legend": ""
+      "legend": "F4"
     },
     {
       "key": "KC_F5",
-      "legend": ""
+      "legend": "F5"
     },
     {
       "key": "KC_F6",
-      "legend": ""
+      "legend": "F6"
     },
     {
       "key": "KC_F7",
-      "legend": ""
+      "legend": "F7"
     },
     {
       "key": "KC_F8",
-      "legend": ""
+      "legend": "F8"
     },
     {
       "key": "KC_F9",
-      "legend": ""
+      "legend": "F9"
     },
     {
       "key": "KC_F10",
-      "legend": ""
+      "legend": "F10"
     },
     {
       "key": "KC_F11",
-      "legend": ""
+      "legend": "F11"
     },
     {
       "key": "KC_F12",
-      "legend": ""
+      "legend": "F12"
     },
     {
       "key": "KC_PRINT_SCREEN",
@@ -849,6 +849,109 @@
       "key": "KC_LAUNCHPAD",
       "legend": "",
       "aliases": ["KC_LPAD"]
+    }
+    ,
+    {
+      "key": "KC_TILDE",
+      "legend": "~",
+      "aliases": ["KC_TILD"]
+    },
+    {
+      "key": "KC_EXCLAIM",
+      "legend": "!",
+      "aliases": ["KC_EXLM"]
+    },
+    {
+      "key": "KC_AT",
+      "legend": "@"
+    },
+    {
+      "key": "KC_HASH",
+      "legend": "#"
+    },
+    {
+      "key": "KC_DOLLAR",
+      "legend": "$",
+      "aliases": ["KC_DLR"]
+    },
+    {
+      "key": "KC_PERCENT",
+      "legend": "%",
+      "aliases": ["KC_PERC"]
+    },
+    {
+      "key": "KC_CIRCUMFLEX",
+      "legend": "^",
+      "aliases": ["KC_CIRC"]
+    },
+    {
+      "key": "KC_AMPERSAND",
+      "legend": "&",
+      "aliases": ["KC_AMPR"]
+    },
+    {
+      "key": "KC_ASTERISK",
+      "legend": "*",
+      "aliases": ["KC_ASTR"]
+    },
+    {
+      "key": "KC_LEFT_PAREN",
+      "legend": "(",
+      "aliases": ["KC_LPRN"]
+    },
+    {
+      "key": "KC_RIGHT_PAREN",
+      "legend": ")",
+      "aliases": ["KC_RPRN"]
+    },
+    {
+      "key": "KC_UNDERSCORE",
+      "legend": "_",
+      "aliases": ["KC_UNDS"]
+    },
+    {
+      "key": "KC_PLUS",
+      "legend": "+",
+      "aliases": ["KC_LPAD"]
+    },
+    {
+      "key": "KC_LEFT_CURLY_BRACE",
+      "legend": "{",
+      "aliases": ["KC_LCBR"]
+    },
+    {
+      "key": "KC_RIGHT_CURLY_BRACE",
+      "legend": "}",
+      "aliases": ["KC_RCBR"]
+    },
+    {
+      "key": "KC_PIPE",
+      "legend": "|"
+    },
+    {
+      "key": "KC_COLON",
+      "legend": ";",
+      "aliases": ["KC_COLN"]
+    },
+    {
+      "key": "KC_DOUBLE_QUOTE",
+      "legend": "\"",
+      "aliases": ["KC_DQUO", "KC_DQT"]
+    },
+    {
+      "key": "KC_LEFT_ANGLE_BRACKET",
+      "legend": "<",
+      "aliases": ["KC_LABK", "KC_LT"]
+    },
+    {
+      "key": "KC_RIGHT_ANGLE_BRACKET",
+      "legend": ">",
+      "aliases": ["KC_RABK", "KC_GT"]
+    },
+    {
+      "key": "KC_QUESTION",
+      "legend": "?",
+      "aliases": ["KC_QUES"]
     }
   ]
 }

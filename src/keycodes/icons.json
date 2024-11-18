@@ -9,5 +9,7 @@
   "KC_LEFT": "ArrowLeftIcon",
   "KC_RIGHT": "ArrowRightIcon",
   "KC_UP": "ArrowUpIcon",
-  "KC_DOWN": "ArrowDownIcon"
+  "KC_DOWN": "ArrowDownIcon",
+  "KC_PRINT_SCREEN": "PrintIcon",
+  "KC_SCROLL_LOCK": "BringDataIcon"
 }

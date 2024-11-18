@@ -12,18 +12,25 @@ function getLegendFromKeycode(keycode?: string) {
 
   // Check if keycode is mapped to icon
   const icon: string | undefined = KEYCODE_ICONS[_keycode as keyof typeof KEYCODE_ICONS];
+  // @ts-expect-error TODO: Create a type for the icons
   if (icon) return React.createElement(ICONS[icon]);
 
   // Check if keycode is mapped to legend
   const prefix = _keycode.substring(0, _keycode.indexOf('_'));
   const legend = KEYCODE_LEGENDS[prefix as keyof typeof KEYCODE_LEGENDS]?.find((map) => map.key === _keycode || map.aliases?.includes(_keycode))?.legend;
-  if (legend) return legend;
+  if (legend !== undefined) return legend; // Empty string should be printed
 
   return _keycode;
 }
 
 function keycodeContainsLayer(keycode: string) {
   return !!keycode.match(/\((\d+)/g);
+}
+
+function extractLayer(keycode: string) {
+  const match = keycode.match(/(\d+)/g);
+  if (!match) return 0;
+  return parseInt(match[0], 10);
 }
 
 type KeyProps = {
@@ -38,12 +45,19 @@ type KeyProps = {
 };
 
 export function Key({ keycode, positionX, positionY, width, height, pressed, onPressed }: KeyProps) {
-  const wasPressedBefore = useRef<boolean>(false);
+  const wasPressedBefore = useRef<boolean | undefined>(pressed);
+  const baseKeycode = useRef<string | undefined>(keycode);
 
   // TODO: All keys will be rerendered on layer change, so this method doesn't work
   useEffect(() => {
-    if (pressed && !wasPressedBefore.current && keycode && keycodeContainsLayer(keycode)) onPressed(2, false); // TODO: "false" should be generic
-    if (!pressed && wasPressedBefore.current) onPressed(0, false);
+    if (pressed && !wasPressedBefore.current && keycode && keycodeContainsLayer(keycode)) {
+      baseKeycode.current = keycode;
+      onPressed(extractLayer(keycode), false); // TODO: "false" should be genericextractLayer(keycode)
+    }
+    if (!pressed && wasPressedBefore.current && baseKeycode.current && keycodeContainsLayer(baseKeycode.current)) {
+      baseKeycode.current = keycode;
+      onPressed(0, false);
+    }
 
     wasPressedBefore.current = pressed ?? false;
   }, [keycode, pressed, onPressed]);

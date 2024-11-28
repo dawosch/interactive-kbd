@@ -376,7 +376,7 @@
     },
     {
       "key": "KC_END",
-      "legend": ""
+      "legend": "End"
     },
     {
       "key": "KC_PAGE_DOWN",
@@ -849,8 +849,7 @@
       "key": "KC_LAUNCHPAD",
       "legend": "",
       "aliases": ["KC_LPAD"]
-    }
-    ,
+    },
     {
       "key": "KC_TILDE",
       "legend": "~",

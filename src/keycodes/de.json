@@ -265,6 +265,70 @@
     {
       "key": "DE_EXLM",
       "legend": "!"
+    },
+    {
+      "key": "DE_AMPR",
+      "legend": "&"
+    },
+    {
+      "key": "DE_PIPE",
+      "legend": "|"
+    },
+    {
+      "key": "DE_LBRC",
+      "legend": "["
+    },
+    {
+      "key": "DE_RBRC",
+      "legend": "]"
+    },
+    {
+      "key": "DE_PERC",
+      "legend": "%"
+    },
+    {
+      "key": "DE_EQL",
+      "legend": "="
+    },
+    {
+      "key": "DE_COLN",
+      "legend": ";"
+    },
+    {
+      "key": "DE_LPRN",
+      "legend": "("
+    },
+    {
+      "key": "DE_RPRN",
+      "legend": ")"
+    },
+    {
+      "key": "DE_QUES",
+      "legend": "?"
+    },
+    {
+      "key": "DE_SLSH",
+      "legend": "/"
+    },
+    {
+      "key": "DE_ASTR",
+      "legend": "*"
+    },
+    {
+      "key": "DE_TILD",
+      "legend": "~"
+    },
+    {
+      "key": "DE_DLR",
+      "legend": "$"
+    },
+    {
+      "key": "DE_LCBR",
+      "legend": "{"
+    },
+    {
+      "key": "DE_RCBR",
+      "legend": "}"
     }
   ]
 }

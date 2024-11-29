@@ -38,7 +38,6 @@ export function KeyboardFileSelection({
           case 'keyboard': {
             const keyboard: QmkKeyboard | undefined = fr.result ? JSON.parse(fr.result.toString()) : undefined;
             if (keyboard) {
-              console.log('keyboard', keyboard);
               onKeyboardChange(keyboard);
               onLayoutChange(Object.keys(keyboard?.layouts)?.[0]);
             }
@@ -80,13 +79,7 @@ export function KeyboardFileSelection({
             <IconButton icon={UploadIcon} onClick={() => keyboardFileRef?.current?.click()} />
             <IconButton icon={CloudUploadIcon} onClick={() => setKeyboardModalOpen(true)} />
           </Group>
-          <input
-            type="file"
-            ref={keyboardFileRef}
-            accept="application/json"
-            style={{ display: 'none' }}
-            onChange={(e) => handleLocalFile('keyboard', e.target.files?.[0])}
-          ></input>
+          <input type="file" ref={keyboardFileRef} accept="application/json" style={{ display: 'none' }} onChange={(e) => handleLocalFile('keyboard', e.target.files?.[0])}></input>
         </Pane>
         <Pane display="flex" justifyContent="center" alignItems="center" paddingX="10px">
           <Text paddingRight="10px">Layout:</Text>
@@ -98,13 +91,7 @@ export function KeyboardFileSelection({
             <IconButton icon={UploadIcon} onClick={() => keymapFileRef?.current?.click()} />
             <IconButton icon={CloudUploadIcon} onClick={() => setKeymapModalOpen(true)} />
           </Group>
-          <input
-            type="file"
-            ref={keymapFileRef}
-            accept="application/json"
-            style={{ display: 'none' }}
-            onChange={(e) => handleLocalFile('keymap', e.target.files?.[0])}
-          ></input>
+          <input type="file" ref={keymapFileRef} accept="application/json" style={{ display: 'none' }} onChange={(e) => handleLocalFile('keymap', e.target.files?.[0])}></input>
         </Pane>
       </Pane>
       <Dialog

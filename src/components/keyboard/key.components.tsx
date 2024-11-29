@@ -45,44 +45,36 @@ type KeyProps = {
   width: number;
   height: number;
   pressed?: boolean;
-  onPressed: (layer?: number, advaced?: { changeBaseLayer?: boolean; shift?: boolean }) => void;
-  // onReleased: () => void;
+  onLayerKeyPressed: (layer: number, isBaseLayer: boolean) => void;
+  onLayerKeyReleased: () => void;
+  onShiftPressed: () => void;
+  onShiftReleased: () => void;
 };
 
-export function Key({ keycode, shift, positionX, positionY, width, height, pressed, onPressed }: KeyProps) {
+export function Key({ keycode, shift, positionX, positionY, width, height, pressed, onLayerKeyPressed, onLayerKeyReleased, onShiftPressed, onShiftReleased }: KeyProps) {
   const wasPressedBefore = useRef<boolean | undefined>(pressed);
   const baseKeycode = useRef<string | undefined>(keycode);
 
-  // TODO: All keys will be rerendered on layer change, so this method doesn't work
   useEffect(() => {
     switch (true) {
       case pressed && !wasPressedBefore.current && keycode && keycodeContainsLayer(keycode): // Layer key pressed
+        onLayerKeyPressed(extractLayer(keycode), changeBaseLayer(keycode));
         baseKeycode.current = keycode;
-        onPressed(extractLayer(keycode), { changeBaseLayer: changeBaseLayer(keycode) }); // TODO: "false" should be genericextractLayer(keycode)
         break;
       case !pressed && wasPressedBefore.current && baseKeycode.current && keycodeContainsLayer(baseKeycode.current): // Layer key released
-        baseKeycode.current = keycode;
-        onPressed(); // TODO: When base layer will be changed we don't have to overwrite it with 0
+        onLayerKeyReleased();
+        baseKeycode.current = undefined;
         break;
-      case pressed && keycode === 'KC_LSFT':
-        onPressed(0, { shift: true });
+      case pressed && keycode === 'KC_LSFT': // Shift pressed
+        onShiftPressed(); // TODO: Maybe it's better to make a generic "onKeyPressed" for "shift" and other keys
         break;
-      case !pressed && keycode === 'KC_LSFT':
-        onPressed(0, { shift: false });
+      case !pressed && keycode === 'KC_LSFT': // Shift released
+        onShiftReleased();
         break;
     }
 
-    // if (pressed && !wasPressedBefore.current && keycode && keycodeContainsLayer(keycode)) {
-    //   baseKeycode.current = keycode;
-    //   onPressed(extractLayer(keycode), false); // TODO: "false" should be genericextractLayer(keycode)
-    // }
-    // if (!pressed && wasPressedBefore.current && baseKeycode.current && keycodeContainsLayer(baseKeycode.current)) {
-    //   baseKeycode.current = keycode;
-    //   onPressed(0, false);
-    // }
-
     wasPressedBefore.current = pressed ?? false;
-  }, [keycode, pressed, onPressed]);
+  }, [keycode, pressed, onLayerKeyPressed, onLayerKeyReleased, onShiftPressed, onShiftReleased]);
 
   return (
     <div

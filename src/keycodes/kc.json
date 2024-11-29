@@ -362,11 +362,11 @@
     },
     {
       "key": "KC_HOME",
-      "legend": ""
+      "legend": "Home"
     },
     {
       "key": "KC_PAGE_UP",
-      "legend": "",
+      "legend": "Page Up",
       "aliases": ["KC_PGUP"]
     },
     {
@@ -380,7 +380,7 @@
     },
     {
       "key": "KC_PAGE_DOWN",
-      "legend": "",
+      "legend": "Page Down",
       "aliases": ["KC_PGDN"]
     },
     {

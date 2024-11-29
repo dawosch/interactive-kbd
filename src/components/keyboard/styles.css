@@ -10,13 +10,11 @@
   background: #fff;
   border-radius: 5px;
   transition: background 0.5s;
-  /* container-type: size;
-  resize: both; */
 }
 
 .legend {
-  /* font-size: 28cqmin; */
-  font-size: .8em;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 .lightMode {

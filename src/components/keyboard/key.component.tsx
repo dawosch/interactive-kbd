@@ -73,7 +73,7 @@ export function Key({
       case pressed && !wasPressedBefore.current && keycode && keycodeContainsLayer(keycode): // Layer key pressed
         layerDelay.current = setTimeout(() => {
           onLayerKeyPressed(extractLayer(keycode), changeBaseLayer(keycode));
-        });
+        }, 180); // TODO: Not every layer toggle is with delay
         baseKeycode.current = keycode;
         break;
       case !pressed && wasPressedBefore.current && baseKeycode.current && keycodeContainsLayer(baseKeycode.current): // Layer key released

@@ -12,6 +12,7 @@ export function App() {
   const [selectedLayout, setSelectedLayout] = useState<string>();
   const [keymap, setKeymap] = useState<QmkKeymap>();
   const [device, setDevice] = useState<HIDDevice>();
+  const [keySize] = useState<number>(70); // TODO: Implement a resize option
 
   useEffect(() => {
     device?.addEventListener('inputreport', handleDeviceInput);
@@ -51,12 +52,13 @@ export function App() {
           onLayoutChange={setSelectedLayout}
           onKeymapChange={setKeymap}
         />
+        {/* <input type="range" min="50" max="100" value={keySize} onChange={(e) => setKeySize(parseInt(e.target.value))} /> */}
         <Authorize onAuthorized={setDevice} />
       </Navbar>
 
       {keyboard && selectedLayout && keyboard.layouts[selectedLayout]?.layout && (
         <Pane display="flex" justifyContent="center" paddingTop="50px">
-          <Keyboard keys={keyboard.layouts[selectedLayout].layout} keymap={keymap} keyWidth={50} keyHeight={50} space={10} />
+          <Keyboard keys={keyboard.layouts[selectedLayout].layout} keymap={keymap} keyWidth={keySize} keyHeight={keySize} space={10} />
         </Pane>
       )}
     </div>

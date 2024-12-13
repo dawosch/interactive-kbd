@@ -23,9 +23,9 @@ export function Keyboard({ keys, keymap, keyWidth, keyHeight, space }: KeyboardP
   return (
     <div className="keyboard" style={{ width, height }}>
       {keys?.map((key, i) => {
-        const keycode = keymap?.[layer][i] !== 'KC_TRANS' ? keymap?.[layer][i] : keymap?.[baseLayer.current][i]; // TODO: Handling special keys here seems not to be ideal
+        const keycode = keymap?.[layer][i] !== 'KC_TRNS' ? keymap?.[layer][i] : keymap?.[baseLayer.current][i]; // TODO: Handling special keys here seems not to be ideal
         return (
-          <Key
+          <Key // TODO: I think the best was is to pass all possible layers to the key
             key={matrixToId(key.matrix)}
             keycode={keycode}
             shift={shift}

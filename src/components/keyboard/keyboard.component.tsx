@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { QmkKey, QmkKeymap } from '../../@types/keyboard.type';
 
-import { Key } from './key.components';
+import { Key } from './key.component';
 import { calculateParentSize, matrixToId } from './keyboard.utils';
 
 type KeyboardProps = { keys: QmkKey[]; keymap?: QmkKeymap; keyWidth: number; keyHeight: number; space: number };

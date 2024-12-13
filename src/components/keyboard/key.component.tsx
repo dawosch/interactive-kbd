@@ -51,19 +51,35 @@ type KeyProps = {
   onShiftReleased: () => void;
 };
 
-export function Key({ keycode, shift, positionX, positionY, width, height, pressed, onLayerKeyPressed, onLayerKeyReleased, onShiftPressed, onShiftReleased }: KeyProps) {
+export function Key({
+  keycode,
+  shift,
+  positionX,
+  positionY,
+  width,
+  height,
+  pressed,
+  onLayerKeyPressed,
+  onLayerKeyReleased,
+  onShiftPressed,
+  onShiftReleased,
+}: KeyProps) {
   const wasPressedBefore = useRef<boolean | undefined>(pressed);
   const baseKeycode = useRef<string | undefined>(keycode);
+  const layerDelay = useRef<number>();
 
   useEffect(() => {
     switch (true) {
       case pressed && !wasPressedBefore.current && keycode && keycodeContainsLayer(keycode): // Layer key pressed
-        onLayerKeyPressed(extractLayer(keycode), changeBaseLayer(keycode));
+        layerDelay.current = setTimeout(() => {
+          onLayerKeyPressed(extractLayer(keycode), changeBaseLayer(keycode));
+        });
         baseKeycode.current = keycode;
         break;
       case !pressed && wasPressedBefore.current && baseKeycode.current && keycodeContainsLayer(baseKeycode.current): // Layer key released
         onLayerKeyReleased();
         baseKeycode.current = undefined;
+        clearTimeout(layerDelay.current);
         break;
       case pressed && keycode === 'KC_LSFT': // Shift pressed
         onShiftPressed(); // TODO: Maybe it's better to make a generic "onKeyPressed" for "shift" and other keys

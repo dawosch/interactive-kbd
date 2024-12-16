@@ -1,6 +1,13 @@
 .welcome {
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  background: #f9fafc;
+  border-radius: 0 10px;
+}
+
+.welcome > h2 {
+  margin: 0;
 }
 
 .welcome > * {

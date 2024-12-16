@@ -5,3 +5,9 @@ body {
   background: #1a1a1a;
   margin: 0;
 }
+
+.github-logo {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

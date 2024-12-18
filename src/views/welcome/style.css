@@ -6,10 +6,6 @@
   border-radius: 0 10px;
 }
 
-.welcome > h2 {
-  margin: 0;
-}
-
-.welcome > * {
+.title {
   text-align: center;
 }

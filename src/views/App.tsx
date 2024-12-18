@@ -15,6 +15,8 @@ export function App() {
   const [keymap, setKeymap] = useState<QmkKeymap>();
   const [device, setDevice] = useState<HIDDevice>();
   const [keySize] = useState<number>(60); // TODO: Implement a resize option
+  const [baseLayer, setBaseLayer] = useState<number>(0);
+  const [layer, setLayer] = useState<number>(0);
 
   useEffect(() => {
     device?.addEventListener('inputreport', handleDeviceInput);
@@ -25,6 +27,9 @@ export function App() {
     if (!selectedLayout) return;
 
     const keys = keyboard?.layouts[selectedLayout]?.layout;
+    setBaseLayer(data.getUint8(3));
+    setLayer(data.getUint8(4));
+
     const key: HidKey = { row: data.getUint8(0), col: data.getUint8(1), pressed: Boolean(data.getUint8(2)) };
     switch (key.pressed) {
       case true: {
@@ -65,7 +70,15 @@ export function App() {
 
       {keyboard && selectedLayout && keyboard.layouts[selectedLayout]?.layout && (
         <Pane display="flex" justifyContent="center" paddingTop="50px">
-          <Keyboard keys={keyboard.layouts[selectedLayout].layout} keymap={keymap} keyWidth={keySize} keyHeight={keySize} space={10} />
+          <Keyboard
+            keys={keyboard.layouts[selectedLayout].layout}
+            keymap={keymap}
+            layer={layer}
+            baseLayer={baseLayer}
+            keyWidth={keySize}
+            keyHeight={keySize}
+            space={10}
+          />
         </Pane>
       )}
     </div>

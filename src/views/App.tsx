@@ -23,6 +23,17 @@ export function App() {
     return () => device?.removeEventListener('inputreport', handleDeviceInput);
   });
 
+  useEffect(() => {
+    const keyboardAsString = localStorage.getItem('keyboard');
+    if (keyboardAsString) setKeyboard(JSON.parse(keyboardAsString));
+
+    const layout = localStorage.getItem('layout');
+    if (layout) setSelectedLayout(layout);
+
+    const keymapAsString = localStorage.getItem('keymap');
+    if (keymapAsString) setKeymap(JSON.parse(keymapAsString));
+  }, [setKeyboard, setSelectedLayout, setKeymap]);
+
   const handleDeviceInput = ({ data }: HIDInputReportEvent) => {
     if (!selectedLayout) return;
 
@@ -49,15 +60,30 @@ export function App() {
     }
   };
 
+  const handleKeyboardChange = (keyboard: QmkKeyboard) => {
+    localStorage.setItem('keyboard', JSON.stringify(keyboard));
+    setKeyboard(keyboard);
+  };
+
+  const handleLayoutChange = (layout: string) => {
+    localStorage.setItem('layout', layout);
+    setSelectedLayout(layout);
+  };
+
+  const handleKaymapChange = (keymap: QmkKeymap) => {
+    localStorage.setItem('keymap', JSON.stringify(keymap));
+    setKeymap(keymap);
+  };
+
   return (
     <div className="interactive-kbd">
       <Navbar title="InteractiveKBD">
         <KeyboardFileSelection
           layout={selectedLayout}
           layouts={Object.keys(keyboard?.layouts ?? [])}
-          onKeyboardChange={setKeyboard}
-          onLayoutChange={setSelectedLayout}
-          onKeymapChange={setKeymap}
+          onKeyboardChange={handleKeyboardChange}
+          onLayoutChange={handleLayoutChange}
+          onKeymapChange={handleKaymapChange}
         />
         {/* <input type="range" min="50" max="100" value={keySize} onChange={(e) => setKeySize(parseInt(e.target.value))} /> */}
         <Authorize onAuthorized={setDevice} />
